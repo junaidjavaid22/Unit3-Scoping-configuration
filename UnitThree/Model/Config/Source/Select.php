@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace RLTSquare\UnitThree\Model\Config\Source;
+
+use Magento\Framework\Data\OptionSourceInterface;
+
+class Select implements OptionSourceInterface
+{
+    /**
+     * @return array
+     */
+    public function toOptionArray(): array
+    {
+        return [
+            ['value' => 'Staging', 'label' => __('Staging')],
+            ['value' => 'Development', 'label' => __('Development')],
+            ['value' => 'Production', 'label' => __('Production')]
+        ];
+    }
+}
