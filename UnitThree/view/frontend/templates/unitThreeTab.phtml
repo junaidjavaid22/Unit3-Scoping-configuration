@@ -1,0 +1,17 @@
+<strong>Username::</strong>
+<?php echo $this->helper('RLTSquare\UnitThree\Helper\Data\Help')->getConfig('rltsquare2/general/username'); ?><br>
+<strong>Password::</strong>
+<?php
+$type = $this->helper('RLTSquare\UnitThree\Helper\Data\Help')->getConfig('rltsquare2/general/dropdown');
+$pass = $this->helper('RLTSquare\UnitThree\Helper\Data\Help')->getConfig('rltsquare2/general/password');
+if ($type == 'Development' || $type == 'Stagging') {
+    $result = substr($pass, 0, 3);
+    echo $result;
+} elseif ($type == 'Production') {
+    $result = substr($pass, 0, 0);
+    echo $result;
+} else
+    echo "Default mode";
+?><br>
+<strong>Environment type:</strong>
+<?php echo $this->helper('RLTSquare\UnitThree\Helper\Data\Help')->getConfig('rltsquare2/general/dropdown'); ?><br>
